@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAGE 3</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #87CEEB; /* Skyblue color */
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .letter-container {
+      width: 90%;
+      max-width: 700px;
+      height: 70vh; /* Set the height to a percentage of the viewport height */
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      position: relative;
+      display: none; /* Hidden by default */
+      padding: 20px;
+      overflow-y: auto; /* Make the content scrollable */
+    }
+
+    .letter-content {
+      font-size: 16px;
+      line-height: 1.6;
+      max-height: calc(70vh - 60px); /* Subtract padding and button height */
+      overflow-y: auto; /* Make letter content scrollable */
+    }
+
+    .letter-content h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #2F4F4F; /* Dark Slate Gray for header */
+    }
+
+    .letter-content p {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    /* Button style */
+    .toggle-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px; /* Button positioned below the letter */
+      display: block;
+      width: 100%;
+    }
+
+    .toggle-button:hover {
+      background-color: #45a049;
+    }
+
+    /* Position the button on the left side */
+    .toggle-button-left {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      background-color: #4CAF50;
+    }
+
+    .toggle-button-left:hover {
+      background-color: #45a049;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .letter-container {
+        height: auto;
+      }
+
+      .letter-content {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Button to toggle letter visibility (initially on the left) -->
+  <button class="toggle-button toggle-button-left" id="showButton" onclick="toggleLetter()">Read Letter</button>
+
+  <!-- Letter container -->
+  <div class="letter-container" id="letter-container">
+    <div class="letter-content">
+      <h2>Dear my Love,</h2>
+      <p>
+        Happy New Year, my love! As we welcome 2025, I can’t help but reflect on how special this past year has been because of you. Even though we’re apart, you’ve brought so much joy, love, and meaning into my life. Every text, call, and moment we’ve shared has reminded me just how lucky I am to have you.
+      </p>
+      <p>
+        This year has been a testament to our strength and commitment. Distance isn’t easy, but it’s shown me just how much you mean to me. Every mile between us is worth it because I know that what we have is real, pure, and so worth fighting for. You’ve taught me patience, trust, and the beauty of looking forward to something amazing—our future together.
+      </p>
+      <p>
+        As we step into this new year, I want you to know how excited I am for all that’s ahead of us. Whether it’s planning our next visit, dreaming about the life we’ll build together, or simply continuing to grow closer, I know this year will be even more special because of you. I can’t wait for the day when distance is no longer a barrier, and we can finally hold each other close.
+      </p>
+      <p>
+        Thank you for being my rock, my confidant, and my greatest source of happiness. You’ve made me feel loved in ways I never thought possible, and I hope I’ve done the same for you. Let’s make 2025 a year of love, growth, and unforgettable memories—both apart and, hopefully, together.
+      </p>
+      <p>
+        I love you more than words can ever capture, and I’ll continue to love you with all my heart, no matter the distance. Here’s to us, my love, and to a new year filled with hope, joy, and the promise of a beautiful future.
+      </p>
+        <p>
+        Your Love,  
+        <br>
+        [Cary]
+      </p>
+
+      <!-- Button inside letter container, visible after letter appears -->
+      <button class="toggle-button" id="hideButton" onclick="toggleLetter()">Fold the Letter</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleLetter() {
+      const letterContainer = document.getElementById('letter-container');
+      const showButton = document.getElementById('showButton');
+      const hideButton = document.getElementById('hideButton');
+
+      // Toggle the visibility of the letter container
+      if (letterContainer.style.display === 'none' || letterContainer.style.display === '') {
+        letterContainer.style.display = 'block';
+        showButton.style.display = 'none'; // Hide the "Show Letter" button
+        hideButton.style.display = 'block'; // Show the "Hide Letter" button
+      } else {
+        letterContainer.style.display = 'none';
+        showButton.style.display = 'block'; // Show the "Show Letter" button
+        hideButton.style.display = 'none'; // Hide the "Hide Letter" button
+      }
+    }
+  </script>
+
+</body>
+</html>
